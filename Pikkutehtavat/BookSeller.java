@@ -2,17 +2,17 @@ package kata;
 
 
 /**
- * Teht‰v‰nanto: https://www.codewars.com/kata/help-the-bookseller/
- * Tallentaa eri kategorioihin kirjoja eri nimill‰, ja etsii tietyn alkuiset kirjat kaikista kategorioista.
- * Palauttaa, montako tietyll‰ kirjaimella alkavaa kirjaa on per kategoria.
+ * Teht√§v√§nanto: https://www.codewars.com/kata/help-the-bookseller/
+ * Tallentaa eri kategorioihin kirjoja eri nimill√§, ja etsii tietyn alkuiset kirjat kaikista kategorioista.
+ * Palauttaa, montako tietyll√§ kirjaimella alkavaa kirjaa on per kategoria.
  * @author mikko
  * @version 18.9.2017
  */
 public class BookSeller {
 
 	/**
-	 * P‰‰ohjelma
-	 * @param args ei k‰yt√∂ss‰
+	 * P√§√§ohjelma
+	 * @param args ei k√§yt√É¬∂ss√§
 	 */
 	public static void main(String[] args) {
 		String esim[] = new String[]{"ABAR 200", "ACCC 1", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"};
@@ -27,9 +27,9 @@ public class BookSeller {
 	}
 	
 	/**
-	 * Palauttaa, paljonko tietyn alkuista kirjaa on per kategoria. Plussaa ne siis yhteen kategorian sis‰ll‰.
-	 * @param lstOfArt Taulukko, jossa kirjan nimi sek‰ lukum‰‰r‰
-	 * @param lstOf1stLetter Haettavan kirjan ensimm‰inen kirjain
+	 * Palauttaa, paljonko tietyn alkuista kirjaa on per kategoria. Plussaa ne siis yhteen kategorian sis√§ll√§.
+	 * @param lstOfArt Taulukko, jossa kirjan nimi sek√§ lukum√§√§r√§
+	 * @param lstOf1stLetter Haettavan kirjan ensimm√§inen kirjain
 	 * @return montako hakua vastaavaa kirjaa per kategoria
 	 */
 	public static String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
