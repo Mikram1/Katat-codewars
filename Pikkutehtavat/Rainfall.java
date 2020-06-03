@@ -1,8 +1,8 @@
 package kata;
 
 /**
- * Teht‰v‰nanto: https://www.codewars.com/kata/56a32dd6e4f4748cc3000006
- * Kertoo kaupunkien sadem‰‰rien keskiarvon & varianssin. Sadem‰‰r‰t ovat merkkijonona, joissa eri kaupunkien
+ * Teht√§v√§nanto: https://www.codewars.com/kata/56a32dd6e4f4748cc3000006
+ * Kertoo kaupunkien sadem√§√§rien keskiarvon & varianssin. Sadem√§√§r√§t ovat merkkijonona, joissa eri kaupunkien
  * data erotetaan toisistaan "\n"-merkkijonolla.
  * @author mikko
  * @version 23.3.2017
@@ -10,8 +10,8 @@ package kata;
 public class Rainfall {
 
 	/**
-	 * P‰‰ohjelma
-	 * @param args ei k‰ytˆss‰
+	 * P√§√§ohjelma
+	 * @param args ei k√§yt√∂ss√§
 	 */
 	public static void main(String[] args) {
 		String data = 
@@ -59,14 +59,14 @@ public class Rainfall {
 		System.out.println(mean("Beijing", data));
 		System.out.println(mean("Beijing", data1));
 		System.out.println(variance("London", data));
-		System.out.println(variance("V‰‰r‰ kaupunki", data));
+		System.out.println(variance("V√§√§r√§ kaupunki", data));
 	}
 
 	/**
-	 * Palauttaa sadem‰‰r‰n keskiarvon haetulle kaupungille
-	 * @param town kaupunki, jonka sadem‰‰r‰ tarkastellaan
+	 * Palauttaa sadem√§√§r√§n keskiarvon haetulle kaupungille
+	 * @param town kaupunki, jonka sadem√§√§r√§ tarkastellaan
 	 * @param strng ns. tietokanta, josta haetaan kaupunki
-	 * @return keskim‰‰r‰inen sadem‰‰r‰ kaupungille
+	 * @return keskim√§√§r√§inen sadem√§√§r√§ kaupungille
 	 * @throws IllegalArgumentException virheilmoituksia varten
 	 */
 	public static double mean (String town, String strng) throws IllegalArgumentException {
@@ -86,10 +86,10 @@ public class Rainfall {
 	}
 	
 	/**
-	 * Palauttaa sadem‰‰r‰n varianssin haetulle kaupungille.
-	 * @param town kaupunki, jonka sadem‰‰r‰ tarkastellaan
+	 * Palauttaa sadem√§√§r√§n varianssin haetulle kaupungille.
+	 * @param town kaupunki, jonka sadem√§√§r√§ tarkastellaan
 	 * @param strng ns. tietokanta, josta haetaan kaupunki
-	 * @return sadem‰‰r‰n varianssi kaupungille
+	 * @return sadem√§√§r√§n varianssi kaupungille
 	 * @throws IllegalArgumentException virheilmoituksia varten
 	 */
 	public static double variance(String town, String strng) throws IllegalArgumentException {
