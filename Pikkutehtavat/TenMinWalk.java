@@ -1,9 +1,9 @@
 package walk;
 
 /**
- * Tehtävänanto: https://www.codewars.com/kata/54da539698b8a2ad76000228
- * Annetaan char-taulukko ilmansuunnista (n,s,e,w), joista jokainen yksittäinen ilmansuunta vie yhden minuutin. Palauttaa true tai false sen mukaan, viekö matka
- * tasan 10 min JA päätyykö takaisin aloituspisteeseen.
+ * TehtÃ¤vÃ¤nanto: https://www.codewars.com/kata/54da539698b8a2ad76000228
+ * Annetaan char-taulukko ilmansuunnista (n,s,e,w), joista jokainen yksittÃ¤inen ilmansuunta vie yhden minuutin. Palauttaa true tai false sen mukaan, viekÃ¶ matka
+ * tasan 10 min JA pÃ¤Ã¤tyykÃ¶ takaisin aloituspisteeseen.
  * Esim. ['n','s','n','s','n','s','n','s','n','s'] => true
  * 		 ['n','s','e','w'] => false
  * 		 ['n','n','n','n','n','n','n','n','n','n'] => false
@@ -20,9 +20,9 @@ public class TenMinWalk {
 	}
 	
 	/**
-	 * Selvittää, viekö matka 10 min ja palaako kävelijä takaisin alkupisteeseensä.
-	 * @param walk Käveltävät ilmansuunnat (oletetaan, että vaan [n,s,e,w] ovat käytössä)
-	 * @return true, jos kävely vie 10 min ja palaa takaisin alkupisteeseen. Muuten false.
+	 * SelvittÃ¤Ã¤, viekÃ¶ matka 10 min ja palaako kÃ¤velijÃ¤ takaisin alkupisteeseensÃ¤.
+	 * @param walk KÃ¤veltÃ¤vÃ¤t ilmansuunnat (oletetaan, ettÃ¤ vaan [n,s,e,w] ovat kÃ¤ytÃ¶ssÃ¤)
+	 * @return true, jos kÃ¤vely vie 10 min ja palaa takaisin alkupisteeseen. Muuten false.
 	 */
 	public static boolean isValid(char[] walk) {
 	    if(!(walk.length == 10)) return false;
