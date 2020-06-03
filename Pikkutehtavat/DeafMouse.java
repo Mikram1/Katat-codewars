@@ -1,12 +1,12 @@
 package kata;
 
 /**
- * Teht‰v‰nanto: https://www.codewars.com/kata/598106cb34e205e074000031
- * N‰ytt‰‰ merkkijonon, joka edustaa joukkoa hiiri‰ (O) sek‰ pillipiiparia (P). Teht‰v‰n‰ on selvitt‰‰, kuinka monta 
- * kuuroa hiirt‰ joukossa on - siis kuinka moni hiiri menee pillipiiparista p‰invastaiseen suuntaan. Menosuunnan m‰‰ritt‰‰ hiiren h‰nt‰ (~).
- * Esim. (~O~O~O~O P) => 0 kuuroa hiirt‰
+ * Teht√§v√§nanto: https://www.codewars.com/kata/598106cb34e205e074000031
+ * N√§ytt√§√§ merkkijonon, joka edustaa joukkoa hiiri√§ (O) sek√§ pillipiiparia (P). Teht√§v√§n√§ on selvitt√§√§, kuinka monta 
+ * kuuroa hiirt√§ joukossa on - siis kuinka moni hiiri menee pillipiiparista p√§invastaiseen suuntaan. Menosuunnan m√§√§ritt√§√§ hiiren h√§nt√§ (~).
+ * Esim. (~O~O~O~O P) => 0 kuuroa hiirt√§
  * 		 (P O~ O~ ~O O~) => 1 kuuro hiiri
- * 		 (~O~O~O~OP~O~OO~) => 2 kuuroa hiirt‰
+ * 		 (~O~O~O~OP~O~OO~) => 2 kuuroa hiirt√§
  * @author Mikko
  * @version 23.9.2017
  *
@@ -14,8 +14,8 @@ package kata;
 public class DeafMouse {
 
 	/**
-	 * p‰‰ohj.
-	 * @param args ei k‰uy√∂
+	 * p√§√§ohj.
+	 * @param args ei k√§uy√É¬∂
 	 */
 	public static void main(String[] args) {
 		String esim1 = "~O~O~O~O P";
@@ -27,9 +27,9 @@ public class DeafMouse {
 	}
 	
 	/**
-	 * Laskee merkkijonosta kuurot rotat. Oletetaan, ett‰ k‰yt√∂ss‰ on vain merkkej‰ 'O', 'P', ' ' ja '~'.
+	 * Laskee merkkijonosta kuurot rotat. Oletetaan, ett√§ k√§yt√É¬∂ss√§ on vain merkkej√§ 'O', 'P', ' ' ja '~'.
 	 * @param town merkkijono
-	 * @return kuurojen lukum‰‰r‰
+	 * @return kuurojen lukum√§√§r√§
 	 */
 	public static int countDeafRats(final String town) {
 		boolean piperPlace = false;
