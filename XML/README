@@ -1,3 +1,6 @@
 Lisäilen tänne XML-tehtäviä Tsekin vaihtoajoilta. Eri aiheista annettiin viikkotehtäviä, jotka perustuivat yleensä aina uuteen
 teknologiaan. Niitä olivat XML (validisuus ym.), DTD, XPath, XSD, XSLT, XQuery, SAX ja DOM. Käytännössä XML-dokumenttien tekoa,
 transformointia ja kyselyjä.
+
+Viikkotehtäviin piti keksiä oma aihe, ja mulla se oli olutkatalogi. Siksi XML-tiedosto koostuu lajitelmasta eri maiden panimoista
+ja niiden tekemistä oluista. Maassa maan tavalla.
