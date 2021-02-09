@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="463.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxharkka.HreseptitController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" onAction="#handlePaivita" text="Päivitä">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Päivitä reseptit" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Poista">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handlePoista" text="Poista resepti" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleOhjeet" text="Ohjeet" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="446.0" BorderPane.alignment="CENTER">
+         <content>
+            <BorderPane prefHeight="433.0" prefWidth="435.0">
+               <top>
+                  <ToolBar prefHeight="40.0" prefWidth="445.0" BorderPane.alignment="CENTER">
+                     <items>
+                        <Label prefHeight="17.0" prefWidth="55.0" text="Lajittele:" />
+                        <ComboBox fx:id="lajitteleBox" onAction="#handlePaivita" prefWidth="150.0" />
+                     </items>
+                  </ToolBar>
+               </top>
+               <bottom>
+                  <Button mnemonicParsing="false" onAction="#handleValitse" text="Valitse" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </bottom>
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <Label text="Tulokset" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <ListChooser fx:id="chooserNimet" rivit="" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </content>
+      </ScrollPane>
+   </center>
+   <left>
+      <GridPane prefHeight="428.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="53.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="147.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="198.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="339.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="339.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="339.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="339.0" minHeight="10.0" prefHeight="250.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Hae:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="textHaku" onKeyReleased="#handleHae" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <left>
+                  <Label text="Reseptin nimeä" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <CheckBox fx:id="checkNimi" mnemonicParsing="false" onAction="#handlePaivita" prefHeight="17.0" prefWidth="16.0" selected="true" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets right="20.0" />
+                     </BorderPane.margin>
+                  </CheckBox>
+               </right>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <left>
+                  <Label text="Ainesosaa" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <CheckBox fx:id="checkAinesosa" mnemonicParsing="false" onAction="#handlePaivita" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets right="20.0" />
+                     </BorderPane.margin>
+                  </CheckBox>
+               </right>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleLisaaResepti" prefHeight="68.0" prefWidth="114.0" text="Lisää resepti" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </left>
+</BorderPane>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import fi.jyu.mit.fxgui.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="393.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxharkka.ValittureseptiController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Poista...">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handlePoista" text="Poista resepti" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleOhjeet" text="Ohjeet" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StringGrid editable="true" rivit="Ohjeet&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </StringGrid>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <TextField alignment="CENTER" promptText="Reseptin nimi" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="30.0" right="30.0" top="5.0" />
+               </BorderPane.margin>
+            </TextField>
+         </top>
+      </BorderPane>
+   </center>
+   <left>
+      <BorderPane prefHeight="222.0" prefWidth="111.0" BorderPane.alignment="CENTER">
+         <center>
+            <StringGrid editable="true" rivit="Ainesosat&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;" BorderPane.alignment="CENTER">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </StringGrid>
+         </center>
+      </BorderPane>
+   </left>
+   <right>
+      <VBox prefHeight="79.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="100.0" text="Vaikeusaste:" />
+            <TextField alignment="CENTER">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="102.0" text="Tekoaika:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <TextField>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="104.0" text="Hinta:" />
+            <TextField alignment="CENTER">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox prefHeight="46.0" prefWidth="446.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleTallenna" prefHeight="33.0" prefWidth="87.0" text="Tallenna">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="15.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
