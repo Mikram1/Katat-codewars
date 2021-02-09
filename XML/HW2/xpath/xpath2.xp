@@ -1,0 +1,4 @@
+(:Predicate testing the existence of a subelement. Tests, if an element called 
+   "Hartwall Brewery" exists in the brewery/name-subelement, and returns all 
+   children nodes "beer" of the correct node. :)
+//brewery[name="Hartwall Brewery"]//beer[*]

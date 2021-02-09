@@ -1,0 +1,2 @@
+(: Returns the brewery (ancestor) of the beer "Pilsner Urquell", and all of its subelements. :)
+//beer[name="Pilsner Urquell"]/ancestor::brewery

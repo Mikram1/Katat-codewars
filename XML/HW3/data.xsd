@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="brewery_catalogue">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="note" type="xs:string"/>
+				<xs:element name="cdatasection" type="xs:string"/>
+				<xs:element name="date" type="xs:date"/>
+				
+				<!-- countries-element, with only globally defined subelements. -->
+				<xs:element name="countries">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="country" type="gCountry" minOccurs="1" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+				<!-- beer_types-element, with only locally defined subelements. -->
+				<xs:element name="beer_types">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="beer_type" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string"/>
+										<xs:element name="explanation" type="xs:string"/>
+										<!-- this is an optional element. -->
+										<xs:element name="personal_note" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								<xs:attribute name="beerID" type="xs:ID" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+			</xs:sequence>
+		</xs:complexType>
+		
+	<!-- A key for the different countries. -->
+	<xs:key name="KCountry">
+		<xs:selector xpath="countries/country"/>
+		<xs:field xpath="@countryID"/>
+	</xs:key>
+	
+	<!-- A key for the different beer types. -->
+	<xs:key name="KBeer_type">
+		<xs:selector xpath="beer_types/beer_type"/>
+		<xs:field xpath="@beerID"/>
+	</xs:key>
+	
+	</xs:element>
+	
+	<xs:complexType name="gCountry">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="breweries">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="brewery" type="gBrewery" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="countryID" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="gBrewery">
+		<xs:sequence>
+			<xs:group ref="breweryElements" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="beers">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="beer" type="gBeer" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="gBeer">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<!-- ks. https://www.w3schools.com/xml/schema_complex_text.asp -->
+			<xs:element name="type">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="typeRef" type="xs:IDREF" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="alcohol_content" type="xs:string"/>
+		</xs:sequence>
+		<!-- An optional attribute. And a personal opinion. -->
+		<xs:attribute name="is_delicious" type="xs:boolean"/>
+	</xs:complexType>
+	
+	<!-- The simple elements of brewery that must occur only 1 time. -->
+	<xs:group name="breweryElements">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="founding_city" type="xs:string"/>
+			<!-- The element "founding_year"'s value is restricted to 1300-2020. -->
+			<xs:element name="founding_year">
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:minInclusive value="1300"/>
+						<xs:maxInclusive value="2020"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	
+</xs:schema>

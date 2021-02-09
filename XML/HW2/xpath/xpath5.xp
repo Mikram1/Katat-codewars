@@ -1,0 +1,3 @@
+(: Predicate testing the number of something (nodes). Returns the number of subelements "beer"
+   in the brewery-element with the name "Pilsner Urquell Brewery". :)
+count(//brewery[name="Pilsner Urquell Brewery"]//beer)

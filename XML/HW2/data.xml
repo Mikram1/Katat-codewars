@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made by Mikko Toitturi. -->
+<!DOCTYPE brewery_catalogue [
+<!ENTITY document_status "a work in progress. Not exhaustive by any means.">
+<!ELEMENT brewery_catalogue (note+, cdatasection, date, countries, beer_types)>
+	<!ELEMENT note (#PCDATA)>
+	<!ELEMENT cdatasection ANY>
+	<!ELEMENT date (#PCDATA)>
+	<!ELEMENT countries (country+)>
+		<!ELEMENT country (name, breweries)>
+		<!ELEMENT name (#PCDATA)>
+		<!ATTLIST country countryID ID #REQUIRED>
+			<!ELEMENT breweries (brewery+)>
+				<!ELEMENT brewery (name, founding_city, founding_year, beers)>
+					<!ELEMENT founding_city (#PCDATA)>
+					<!ELEMENT founding_year (#PCDATA)>
+					<!ELEMENT beers (beer+)>
+						<!ELEMENT beer (name, type, alcohol_content)>
+						<!ELEMENT type (#PCDATA)>
+						<!ATTLIST type typeRef IDREF #REQUIRED>
+						<!ELEMENT alcohol_content (#PCDATA)>
+	<!ELEMENT beer_types (beer_type+)>
+		<!ELEMENT beer_type (name, explanation, personal_note*)>
+		<!ATTLIST beer_type beerID ID #REQUIRED>	
+			<!ELEMENT explanation (#PCDATA)>
+			<!ELEMENT personal_note (#PCDATA)>
+]>
+	
+<brewery_catalogue>
+	<note>The goal of this document is to list different countries' breweries and their signature types of beer. Current status is: &document_status;</note>
+	<cdatasection> <![CDATA[
+			<p>Here's a code to count the number of beers for a later stage: </p>
+			document.writeln(<p>"Current number of beers is: document.getElementsByTagName("beer").length"</p>
+			]]>
+	</cdatasection>
+	<date><?php echo Date(d.m.Y)?></date>
+	<countries>
+		<country countryID="CZE">
+			<name>Czech Republic</name>
+			<breweries>
+				<brewery>
+					<name>Pilsner Urquell Brewery</name>
+					<founding_city>Plzeň</founding_city>
+					<founding_year>1842</founding_year>
+					<beers>
+						<beer>
+							<name>Pilsner Urquell</name>
+							<type typeRef="PaleLager">Pale lager</type>
+							<alcohol_content>4,4 %</alcohol_content>
+						</beer>
+						<beer>
+							<name>Gambrinus Original</name>
+							<type typeRef="PaleLager">Pale lager</type>
+							<alcohol_content>4,3 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+				<brewery>
+					<name>Royal Brewery of Krušovice</name>
+					<founding_city>Krušovice</founding_city>
+					<founding_year>1581</founding_year>
+					<beers>
+						<beer>
+							<name>Krušovice 10</name>
+							<type typeRef="PaleDraught">Pale draught beer</type>
+							<alcohol_content>4,2 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+			</breweries>
+		</country>
+		<country countryID="FIN">
+			<name>Finland</name>
+			<breweries>
+				<brewery>
+					<name>Olvi Brewery</name>
+					<founding_city>Iisalmi</founding_city>
+					<founding_year>1878</founding_year>
+					<beers>
+						<beer>
+							<name>Sandels</name>
+							<type typeRef="PaleDraught">Pale draught beer</type>
+							<alcohol_content>4,7 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+				<brewery>
+					<name>Hartwall Brewery</name>
+					<founding_city>Sortavala</founding_city>
+					<founding_year>1836</founding_year>
+					<beers>
+						<beer>
+							<name>Karjala III</name>
+							<type typeRef="PaleLager">Pale lager</type>
+							<alcohol_content>4,6 %</alcohol_content>
+						</beer>
+						<beer>
+							<name>Lapin kulta</name>
+							<type typeRef="PaleLager">Pale lager</type>
+							<alcohol_content>4,5 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+			</breweries>
+		</country>
+	</countries>
+	<beer_types>
+	<!-- The types will increase as more beers are added. -->
+		<beer_type beerID="PaleLager">
+			<name>Pale lager</name>
+			<explanation>https://en.wikipedia.org/wiki/Pale_lager</explanation>
+			<personal_note>I did this just to accomplish the second homework requiring an 
+			absence of an element</personal_note>
+		</beer_type>
+		<beer_type beerID="PaleDraught">
+			<name>Pale Draught</name>
+			<explanation>https://en.wikipedia.org/wiki/Draught_beer</explanation>
+		</beer_type>
+	</beer_types>
+</brewery_catalogue>

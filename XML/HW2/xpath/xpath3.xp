@@ -1,0 +1,6 @@
+(: Tests the nonexistence of a subelement. Lists all breweries of listed countries that are
+   NOT Finland. :)
+//country[not(name="Finland")]//brewery/name
+(: Since the checker didn't accept this, here's another one: lists all subelements "beer_type"
+   without the element "personal_note". :)
+//beer_type[not(personal_note)]

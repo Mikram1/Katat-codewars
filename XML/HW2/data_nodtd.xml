@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made by Mikko Toitturi. -->
+<!DOCTYPE brewery_catalogue SYSTEM "HW1_Toitturi.dtd">
+<brewery_catalogue>
+	<note>The goal of this document is to list different countries' breweries and their signature types of beer. Current status is: &document_status;</note>
+	<cdatasection> <![CDATA[
+			<p>Here's a code to count the number of beers for a later stage: </p>
+			document.writeln(<p>"Current number of beers is: document.getElementsByTagName("beer").length"</p>
+			]]>
+	</cdatasection>
+	<date><?php echo Date(d.m.Y)?></date>
+	<countries>
+		<country countryID="CZE">
+			<name>Czech Republic</name>
+			<breweries>
+				<brewery>
+					<name>Pilsner Urquell Brewery</name>
+					<founding_city>Plzeň</founding_city>
+					<founding_year>1842</founding_year>
+					<beers>
+						<beer>
+							<name>Pilsner Urquell</name>
+							<type>Pale lager</type>
+							<typeRef generalType="pale" typeRef="PaleLager"/>
+							<alcohol_content>4,4 %</alcohol_content>
+						</beer>
+						<beer>
+							<name>Gambrinus Original</name>
+							<type>Pale lager</type>
+							<typeRef generalType="pale" typeRef="PaleLager"/>
+							<alcohol_content>4,3 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+				<brewery>
+					<name>Royal Brewery of Krušovice</name>
+					<founding_city>Krušovice</founding_city>
+					<founding_year>1581</founding_year>
+					<beers>
+						<beer>
+							<name>Krušovice 10</name>
+							<type>Pale draught beer</type>
+							<typeRef generalType="pale" typeRef="PaleDraught"/>
+							<alcohol_content>4,2 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+			</breweries>
+		</country>
+		<country countryID="FIN">
+			<name>Finland</name>
+			<breweries>
+				<brewery>
+					<name>Olvi Brewery</name>
+					<founding_city>Iisalmi</founding_city>
+					<founding_year>1878</founding_year>
+					<beers>
+						<beer>
+							<name>Sandels</name>
+							<type>Pale draught beer</type>
+							<typeRef typeRef="PaleDraught"/>
+							<alcohol_content>4,7 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+				<brewery>
+					<name>Hartwall Brewery</name>
+					<founding_city>Sortavala</founding_city>
+					<founding_year>1836</founding_year>
+					<beers>
+						<beer>
+							<name>Karjala III</name>
+							<type>Pale lager</type>
+							<typeRef generalType="pale" typeRef="PaleLager"/>
+							<alcohol_content>4,6 %</alcohol_content>
+						</beer>
+						<beer>
+							<name>Lapin kulta</name>
+							<type>Pale lager</type>
+							<typeRef typeRef="PaleLager"/>
+							<alcohol_content>4,5 %</alcohol_content>
+						</beer>
+					</beers>
+				</brewery>
+			</breweries>
+		</country>
+	</countries>
+	<beer_types>
+	<!-- The types will increase as more beers are added. -->
+		<beer_type beerID="PaleLager">
+			<name>Pale lager</name>
+			<explanation>
+				<link>https://en.wikipedia.org/wiki/Pale_lager</link>
+			</explanation>
+		</beer_type>
+		<beer_type beerID="PaleDraught">
+			<name>Pale Draught</name>
+			<explanation>
+				<link>https://en.wikipedia.org/wiki/Draught_beer</link>
+			</explanation>
+		</beer_type>
+	</beer_types>
+</brewery_catalogue>

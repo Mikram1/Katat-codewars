@@ -1,0 +1,5 @@
+(: Predicate testing the position of something (node). Returns the last child of the 
+   element "beer type" :)
+//beer_types/beer_type[position() = last()]
+(: Another way :)
+//beer_types/beer_type[last()]

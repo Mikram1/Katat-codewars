@@ -1,0 +1,2 @@
+(: Testing the value of an attribute. Lists all the names of the beers with countryID "FIN" :)
+//country[@countryID="FIN"]//beer/name

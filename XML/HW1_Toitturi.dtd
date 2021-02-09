@@ -1,0 +1,26 @@
+<!ENTITY document_status "a work in progress. Not exhaustive by any means.">
+<!ELEMENT brewery_catalogue (note+, cdatasection, date, countries, beer_types)>
+	<!ELEMENT note (#PCDATA)>
+	<!ELEMENT cdatasection ANY>
+	<!ELEMENT date (#PCDATA)>
+	<!ELEMENT countries (country+)>
+		<!ELEMENT country (name, breweries)>
+		<!ELEMENT name (#PCDATA)>
+		<!ATTLIST country countryID ID #REQUIRED>
+			<!ELEMENT breweries (brewery+)>
+				<!ELEMENT brewery (name, founding_city, founding_year, beers)>
+					<!ELEMENT founding_city (#PCDATA)>
+					<!ELEMENT founding_year (#PCDATA)>
+					<!ELEMENT beers (beer+)>
+						<!ELEMENT beer (name, type, typeRef, alcohol_content)>
+						<!ELEMENT type (#PCDATA)>
+						<!ELEMENT typeRef EMPTY>
+							<!-- More values will be added in due time. Not mandatory. -->
+							<!ATTLIST typeRef generalType (pale|dark|other) #IMPLIED
+											  typeRef IDREF #REQUIRED>
+						<!ELEMENT alcohol_content (#PCDATA)>
+	<!ELEMENT beer_types (beer_type+)>
+		<!ELEMENT beer_type (name, explanation)>
+		<!ATTLIST beer_type beerID ID #REQUIRED>	
+			<!ELEMENT explanation (#PCDATA|link)*>
+				<!ELEMENT link (#PCDATA)>
