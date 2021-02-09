@@ -1,9 +1,0 @@
-Content\maali.xnb
-Content\Ukko1.xnb
-Content\kentta1.xnb
-Content\Taso.xnb
-Content\Meteoriitti.xnb
-Content\KyykkyUkko.xnb
-Content\Raketti.xnb
-Content\Osuma.xnb
-Content\Ohjekuva.xnb
